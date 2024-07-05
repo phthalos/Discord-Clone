@@ -23,15 +23,20 @@ export default function RootLayout({
         <ClerkProvider>
             <html lang="en" suppressHydrationWarning>
                 <body className={cn(font.className, "bg-white dark:bg-[#313338]")}>
-                    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={true} storageKey="discord-theme">
-                        <SignedOut>
-                            <RedirectToSignIn />
-                        </SignedOut>
-                        <SignedIn>
-                            <UserButton />
-                            {children}
-                        </SignedIn>
-                    </ThemeProvider>
+                    {/* <ThemeProvider
+                        attribute="class"
+                        defaultTheme="dark"
+                        enableSystem={false}
+                        storageKey="discord-theme"
+                    > */}
+                    <SignedOut>
+                        <RedirectToSignIn />
+                    </SignedOut>
+                    <SignedIn>
+                        <UserButton />
+                        {children}
+                    </SignedIn>
+                    {/* </ThemeProvider> */}
                 </body>
             </html>
         </ClerkProvider>
